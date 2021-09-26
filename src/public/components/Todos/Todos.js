@@ -1,7 +1,6 @@
 import React from 'react'
-import globalStyles from 'GlobalSCSS';
+import 'GlobalSCSS';
 import { useTodosContext } from 'TodosStore';
-const { componentContainer } = globalStyles;
 
 export default () => {
   const [{ todos, editedTodoValue }, todosDispatch] = useTodosContext();
@@ -12,7 +11,7 @@ export default () => {
   }, [todos]);
 
   return (
-    <div className={componentContainer} id='todos-root'>
+    <div className='component-container' id='todos-root'>
       <div>Todos: {todos.join(', ')}</div>
       <form onSubmit={() => {
         event.preventDefault();

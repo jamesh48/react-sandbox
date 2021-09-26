@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const cssRules = require(path.resolve(__dirname, 'cssRules.js'));
 const jsRules = require(path.resolve(__dirname, 'jsRules.js'));
+const tsRules = require(path.resolve(__dirname, 'tsRules.js'));
+
 const { aliases, stats } = require('./sharedConfigs.js');
 
 require('dotenv').config({ path: './.env' });
@@ -22,7 +24,7 @@ module.exports = {
     __dirname: false,
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js'],
     alias: aliases
   },
   externals: [nodeExternals()],
@@ -30,7 +32,7 @@ module.exports = {
     "server": path.resolve(__dirname, '../src/server/index.js'),
   },
   module: {
-    rules: [jsRules, cssRules],
+    rules: [tsRules, jsRules, cssRules],
   },
   output: {
     path: path.resolve(__dirname, '../dist/server'),

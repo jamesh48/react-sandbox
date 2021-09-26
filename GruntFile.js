@@ -16,7 +16,7 @@ module.exports = function (grunt) {
     gitcommit: {
       task: {
         options: {
-          message: 'Added Testing Capability'
+          message: 'Added functionality for selecting a specific component and started trying out typescript'
         }
       }
     },

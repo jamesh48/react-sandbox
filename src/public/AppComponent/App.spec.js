@@ -1,16 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './App.js';
+import ReactSandboxApp from './ReactSandboxApp.js';
 import { GlobalStoreProvider } from 'GlobalStore';
 
 import { mount } from 'enzyme';
 
-describe('App Component', () => {
+describe('ReactSandboxApp Component', () => {
 
-  it('Renders the App Component', () => {
+  it('Renders the ReactSanboxApp Component', () => {
     const wrapper = mount(
       <GlobalStoreProvider>
-        <App />
+        <ReactSandboxApp />
       </GlobalStoreProvider>
     );
     expect(wrapper.find('#app-root').length).toEqual(1);

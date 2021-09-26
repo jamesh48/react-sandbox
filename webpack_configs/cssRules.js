@@ -11,9 +11,9 @@ module.exports = {
       options: {
         // discardDuplicates: true,
         importLoaders: 1,
-        modules: {
-          localIdentName: '[name]__[local]___[hash:base64:5]',
-        },
+        // modules: {
+        //   localIdentName: '[name]__[local]___[hash:base64:5]',
+        // },
         sourceMap: process.env.NODE_ENV !== 'production',
       },
     },
