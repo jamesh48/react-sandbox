@@ -1,19 +1,19 @@
-const express = require('express');
-const path = require('path');
-const reduxApp = express();
+import express from 'express';
+import path from 'path';
+const sandboxApp = express();
 
-reduxApp.use(express.static(path.resolve('./dist/public')));
+sandboxApp.use(express.static(path.resolve('./dist/public')));
 
-reduxApp.use('*', (req, res, next)=> {
+sandboxApp.use('*', (req, res, next) => {
   console.log(req.originalUrl, req.method);
   next();
 })
 
-reduxApp.get('/', (req, res) => {
+sandboxApp.get('/', (req, res) => {
   res.send('./index.html')
 });
 
 const port = 4300;
-reduxApp.listen(port, () => {
-  console.log('redux app listening on port ' + port)
+sandboxApp.listen(port, () => {
+  console.log('React sandbox listening on port ' + port)
 })

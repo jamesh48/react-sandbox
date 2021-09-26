@@ -12,7 +12,7 @@ export default () => {
   }, [todos]);
 
   return (
-    <div className={componentContainer}>
+    <div className={componentContainer} id='todos-root'>
       <div>Todos: {todos.join(', ')}</div>
       <form onSubmit={() => {
         event.preventDefault();

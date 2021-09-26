@@ -4,8 +4,10 @@
   "description": "This is a repo for me to test out new React paradigms, concepts, components and ideas, as well as as a template and model for me to use and refer to in terms of set up and best practices.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/server/index.js"
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "NODE_ENV=test npm run test -- --watch",
+    "start": "nodemon dist/server/server.js",
+    "dev:build": "webpack && concurrently \"webpack --watch\" \"npm run start\""
   },
   "keywords": [
     "React",
@@ -19,26 +21,35 @@
     "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-redux": "^7.2.5",
-    "redux": "^4.1.1",
-    "regenerator-runtime": "^0.13.9",
-    "webpack": "^5.52.1"
+    "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "babel-jest": "^27.2.2",
     "babel-loader": "^8.2.2",
+    "babel-plugin-webpack-alias": "^2.1.2",
     "concurrently": "^6.2.1",
     "css-loader": "^6.3.0",
     "dotenv": "^10.0.0",
+    "enzyme": "^3.11.0",
     "grunt": "^1.4.1",
     "grunt-git": "^1.1.1",
+    "grunt-webpack": "^4.0.3",
+    "jest": "^27.2.2",
+    "jsdom": "^17.0.0",
+    "jsdom-global": "^3.0.2",
     "mini-css-extract-plugin": "^2.3.0",
     "node-sass": "^6.0.1",
-    "nodemon": "^2.0.12",
+    "nodemon": "^2.0.13",
+    "react-test-renderer": "^17.0.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",
     "time-grunt": "^2.0.0",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0",
     "webpack-node-externals": "^3.0.0"
   }
 }

@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import { GlobalStoreProvider } from 'GlobalStore';
 import 'ResetSCSS';
-import App from './components/App.js';
+import App from './AppComponent/App.js';
 
 ReactDOM.render(
   <GlobalStoreProvider>
